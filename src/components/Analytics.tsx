@@ -62,14 +62,12 @@ export default function Analytics({
         });
       };
 
-      // Load GA after page is fully loaded with additional delay
-      setTimeout(() => {
-        if (document.readyState === 'complete') {
-          loadGA();
-        } else {
-          window.addEventListener('load', loadGA);
-        }
-      }, 2000); // 2 second delay
+      // Load GA immediately but non-blocking
+      if (document.readyState === 'complete') {
+        loadGA();
+      } else {
+        window.addEventListener('load', loadGA);
+      }
     }
 
     // Facebook Pixel - Removed to avoid conflicts with MetaPixel component
@@ -90,14 +88,12 @@ export default function Analytics({
         document.head.appendChild(script);
       };
 
-      // Load Clarity after page is fully loaded with additional delay
-      setTimeout(() => {
-        if (document.readyState === 'complete') {
-          loadClarity();
-        } else {
-          window.addEventListener('load', loadClarity);
-        }
-      }, 3000); // 3 second delay
+      // Load Clarity immediately but non-blocking
+      if (document.readyState === 'complete') {
+        loadClarity();
+      } else {
+        window.addEventListener('load', loadClarity);
+      }
     }
 
     // Track button clicks

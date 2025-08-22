@@ -3,16 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Performance optimizations
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
   },
   
   // Image optimization
@@ -24,7 +15,7 @@ const nextConfig: NextConfig = {
   // Compression
   compress: true,
   
-  // Bundle analyzer and optimization
+  // Bundle optimization
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       // Optimize bundle size
@@ -37,12 +28,6 @@ const nextConfig: NextConfig = {
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
               chunks: 'all',
-            },
-            analytics: {
-              test: /[\\/]node_modules[\\/](@google-analytics|gtag|clarity|facebook)[\\/]/,
-              name: 'analytics',
-              chunks: 'all',
-              priority: 10,
             },
           },
         },

@@ -15,14 +15,12 @@ export default function MetaPixel() {
       trackViewContent();
     };
 
-    // Load after page is fully loaded with additional delay
-    setTimeout(() => {
-      if (document.readyState === 'complete') {
-        loadMetaPixel();
-      } else {
-        window.addEventListener('load', loadMetaPixel);
-      }
-    }, 2500); // 2.5 second delay
+    // Load immediately but non-blocking
+    if (document.readyState === 'complete') {
+      loadMetaPixel();
+    } else {
+      window.addEventListener('load', loadMetaPixel);
+    }
   }, []);
 
   return null; // This component doesn't render anything
