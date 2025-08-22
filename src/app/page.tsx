@@ -18,6 +18,10 @@ import {
   Target,
   Briefcase
 } from 'lucide-react';
+
+// Lazy load heavy components
+const Analytics = lazy(() => import('@/components/Analytics'));
+const MetaPixel = lazy(() => import('@/components/MetaPixel'));
 import { 
   trackAddToCart, 
   trackLead, 

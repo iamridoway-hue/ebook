@@ -31,6 +31,9 @@ export default function Analytics({
     // Google Analytics 4 - Load with delay to prioritize content
     if (typeof window !== 'undefined' && gtagId) {
       const loadGA = () => {
+        // Check if already loaded
+        if ((window as any).gtag) return;
+        
         const script1 = document.createElement('script');
         script1.async = true;
         script1.defer = true;
@@ -59,12 +62,14 @@ export default function Analytics({
         });
       };
 
-      // Load GA after page is fully loaded
-      if (document.readyState === 'complete') {
-        loadGA();
-      } else {
-        window.addEventListener('load', loadGA);
-      }
+      // Load GA after page is fully loaded with additional delay
+      setTimeout(() => {
+        if (document.readyState === 'complete') {
+          loadGA();
+        } else {
+          window.addEventListener('load', loadGA);
+        }
+      }, 2000); // 2 second delay
     }
 
     // Facebook Pixel - Removed to avoid conflicts with MetaPixel component
@@ -85,12 +90,14 @@ export default function Analytics({
         document.head.appendChild(script);
       };
 
-      // Load Clarity after page is fully loaded
-      if (document.readyState === 'complete') {
-        loadClarity();
-      } else {
-        window.addEventListener('load', loadClarity);
-      }
+      // Load Clarity after page is fully loaded with additional delay
+      setTimeout(() => {
+        if (document.readyState === 'complete') {
+          loadClarity();
+        } else {
+          window.addEventListener('load', loadClarity);
+        }
+      }, 3000); // 3 second delay
     }
 
     // Track button clicks

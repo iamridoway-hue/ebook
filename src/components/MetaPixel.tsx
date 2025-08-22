@@ -15,12 +15,14 @@ export default function MetaPixel() {
       trackViewContent();
     };
 
-    // Load after page is fully loaded
-    if (document.readyState === 'complete') {
-      loadMetaPixel();
-    } else {
-      window.addEventListener('load', loadMetaPixel);
-    }
+    // Load after page is fully loaded with additional delay
+    setTimeout(() => {
+      if (document.readyState === 'complete') {
+        loadMetaPixel();
+      } else {
+        window.addEventListener('load', loadMetaPixel);
+      }
+    }, 2500); // 2.5 second delay
   }, []);
 
   return null; // This component doesn't render anything
