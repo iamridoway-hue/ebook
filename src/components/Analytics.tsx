@@ -28,50 +28,69 @@ export default function Analytics({
   clarityId = 'XXXXXXXXXX'
 }: AnalyticsProps) {
   useEffect(() => {
-    // Google Analytics 4
+    // Google Analytics 4 - Load with delay to prioritize content
     if (typeof window !== 'undefined' && gtagId) {
-      const script1 = document.createElement('script');
-      script1.async = true;
-      script1.src = `https://www.googletagmanager.com/gtag/js?id=${gtagId}`;
-      document.head.appendChild(script1);
+      const loadGA = () => {
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.defer = true;
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${gtagId}`;
+        document.head.appendChild(script1);
 
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function() {
-        window.dataLayer.push(arguments);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', gtagId, {
+          page_title: 'Boi Lagbe - 3000+ বাংলা পিডিএফ বই',
+          page_location: window.location.href,
+          custom_map: {
+            'custom_parameter_1': 'book_collection',
+            'custom_parameter_2': 'bengali_books'
+          }
+        });
+
+        // Track page views
+        window.gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          custom_parameter_1: 'landing_page'
+        });
       };
-      window.gtag('js', new Date());
-      window.gtag('config', gtagId, {
-        page_title: 'Boi Lagbe - 3000+ বাংলা পিডিএফ বই',
-        page_location: window.location.href,
-        custom_map: {
-          'custom_parameter_1': 'book_collection',
-          'custom_parameter_2': 'bengali_books'
-        }
-      });
 
-      // Track page views
-      window.gtag('event', 'page_view', {
-        page_title: document.title,
-        page_location: window.location.href,
-        custom_parameter_1: 'landing_page'
-      });
+      // Load GA after page is fully loaded
+      if (document.readyState === 'complete') {
+        loadGA();
+      } else {
+        window.addEventListener('load', loadGA);
+      }
     }
 
     // Facebook Pixel - Removed to avoid conflicts with MetaPixel component
 
-    // Microsoft Clarity
+    // Microsoft Clarity - Load with delay
     if (typeof window !== 'undefined' && clarityId) {
-      const clarity = function(...args: unknown[]) {
-        (clarity as any).q = (clarity as any).q || [];
-        (clarity as any).q.push(args);
+      const loadClarity = () => {
+        const clarity = function(...args: unknown[]) {
+          (clarity as any).q = (clarity as any).q || [];
+          (clarity as any).q.push(args);
+        };
+        (window as any).clarity = clarity;
+        
+        const script = document.createElement('script');
+        script.async = true;
+        script.defer = true;
+        script.src = `https://www.clarity.ms/tag/${clarityId}`;
+        document.head.appendChild(script);
       };
-      (window as any).clarity = clarity;
-      
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.clarity.ms/tag/${clarityId}`;
-      const firstScript = document.getElementsByTagName('script')[0];
-      firstScript.parentNode?.insertBefore(script, firstScript);
+
+      // Load Clarity after page is fully loaded
+      if (document.readyState === 'complete') {
+        loadClarity();
+      } else {
+        window.addEventListener('load', loadClarity);
+      }
     }
 
     // Track button clicks

@@ -6,9 +6,10 @@ import MetaPixel from "@/components/MetaPixel";
 
 const bengali = Hind_Siliguri({
   subsets: ['bengali', 'latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '600', '700'], // Reduced font weights for better performance
   variable: "--font-bengali",
   display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -73,8 +74,20 @@ export default function RootLayout({
   return (
     <html lang="bn" className={bengali.variable}>
       <head>
+        {/* Performance optimizations */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        
+        {/* DNS prefetch for external domains */}
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.clarity.ms" />
+        <link rel="dns-prefetch" href="//connect.facebook.net" />
+        
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3B82F6" />
@@ -82,7 +95,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Boi Lagbe" />
-        {/* <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
         <link rel="manifest" href="/manifest.json" />
         
         {/* Structured Data */}

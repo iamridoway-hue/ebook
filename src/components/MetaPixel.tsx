@@ -5,12 +5,22 @@ import { initMetaPixel, trackPageView, trackViewContent } from '@/lib/meta-pixel
 
 export default function MetaPixel() {
   useEffect(() => {
-    // Initialize Meta Pixel
-    initMetaPixel();
-    
-    // Track page view and content view
-    trackPageView();
-    trackViewContent();
+    // Load Meta Pixel after page is fully loaded to prioritize content
+    const loadMetaPixel = () => {
+      // Initialize Meta Pixel
+      initMetaPixel();
+      
+      // Track page view and content view
+      trackPageView();
+      trackViewContent();
+    };
+
+    // Load after page is fully loaded
+    if (document.readyState === 'complete') {
+      loadMetaPixel();
+    } else {
+      window.addEventListener('load', loadMetaPixel);
+    }
   }, []);
 
   return null; // This component doesn't render anything
