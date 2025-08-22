@@ -788,9 +788,11 @@ export default function Home() {
                 <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-5 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold text-lg">N</span>
-                      </div>
+                      <img 
+                        src="/nagad-logo.png" 
+                        alt="Nagad Logo" 
+                        className="w-10 h-10 rounded-full object-cover"
+                      />
                       <span className="font-bold text-blue-800 text-lg">Nagad</span>
                     </div>
                     <span className="text-blue-600 font-mono text-lg font-bold">01845978534</span>
