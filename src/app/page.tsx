@@ -785,6 +785,22 @@ export default function Home() {
                   </div>
                 </div>
 
+                <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-5 hover:shadow-lg transition-shadow">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">N</span>
+                      </div>
+                      <span className="font-bold text-blue-800 text-lg">Nagad</span>
+                    </div>
+                    <span className="text-blue-600 font-mono text-lg font-bold">01845978534</span>
+                  </div>
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <p className="text-blue-700 text-sm font-medium">
+                      ✅ Nagad অ্যাপে গিয়ে &quot;Send Money&quot; সিলেক্ট করুন → ৳50 পাঠান
+                    </p>
+                  </div>
+                </div>
 
               </div>
 
@@ -972,6 +988,7 @@ export default function Home() {
               <h4 className="font-semibold mb-4">পেমেন্ট</h4>
               <div className="space-y-2 text-gray-400">
                 <p>Bkash: 01983139720</p>
+                <p>Nagad: 01845978534</p>
               </div>
             </div>
             <div>
