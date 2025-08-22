@@ -241,7 +241,7 @@ export default function Home() {
                 3000+ বেস্ট সেলিং বই
               </motion.div>
 
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
                 নিজের ইনকাম যদি{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-pulse">
                   কোটি টাকার উপরে
@@ -249,7 +249,7 @@ export default function Home() {
                 নিয়ে যেতে চান
               </h1>
               
-              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed font-medium">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed font-medium">
                 তাহলে নিজের ব্রেইনের উপর খরচ করুন। আর ব্রেইন ডেভলপ হয় বই পড়েই। 
                 <span className="text-blue-700 font-semibold"> নির্বাচিত বেস্ট সেলিং</span> এই বইগুলো আপনার জীবনে সম্ভাবনার নতুন দিগন্ত উন্মোচিত করবে।
               </p>
@@ -259,7 +259,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 py-4"
+                className="flex items-center justify-center space-x-4 sm:space-x-8 py-4"
               >
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600">3000+</div>
@@ -307,7 +307,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-600"
+                className="flex items-center justify-center space-x-4 sm:space-x-6 text-sm text-gray-600"
               >
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
