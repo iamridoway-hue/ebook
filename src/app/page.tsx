@@ -266,7 +266,7 @@ export default function Home() {
                   <div className="text-sm text-gray-600">বই</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">৳50</div>
+                  <div className="text-3xl font-bold text-green-600">৳90</div>
                   <div className="text-sm text-gray-600">মাত্র</div>
                 </div>
                 <div className="text-center">
@@ -363,14 +363,14 @@ export default function Home() {
                       <ArrowRight className="h-8 w-8 text-gray-400 animate-pulse" />
                       <div className="relative">
                         <div className="text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600 animate-pulse">
-                          ৳50
+                          ৳90
                         </div>
                         <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
                           95% ছাড়
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-600 font-medium">সারাজীবনের জন্য মাত্র ৳50!</p>
+                    <p className="text-gray-600 font-medium">সারাজীবনের জন্য মাত্র ৳90!</p>
                   </motion.div>
                   
                   {/* Countdown Timer */}
@@ -423,7 +423,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center justify-center space-x-3">
                       <Download className="h-6 w-6 animate-bounce" />
-                      <span>এখনই কিনুন - মাত্র ৳50</span>
+                      <span>এখনই কিনুন - মাত্র ৳90</span>
                       <Zap className="h-5 w-5 animate-pulse" />
                     </div>
                   </motion.button>
@@ -640,7 +640,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200"
               >
-                <div className="text-3xl font-bold text-green-600 mb-2">৳50</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">৳90</div>
                 <div className="text-sm text-green-700 font-medium">মাত্র মূল্য</div>
               </motion.div>
               
@@ -780,7 +780,7 @@ export default function Home() {
                   </div>
                   <div className="bg-green-100 rounded-lg p-3">
                     <p className="text-green-700 text-sm font-medium">
-                      ✅ Bkash অ্যাপে গিয়ে &quot;Send Money&quot; সিলেক্ট করুন → ৳50 পাঠান
+                      ✅ Bkash অ্যাপে গিয়ে &quot;Send Money&quot; সিলেক্ট করুন → ৳90 পাঠান
                     </p>
                   </div>
                 </div>
@@ -799,7 +799,7 @@ export default function Home() {
                   </div>
                   <div className="bg-blue-100 rounded-lg p-3">
                     <p className="text-blue-700 text-sm font-medium">
-                      ✅ Nagad অ্যাপে গিয়ে &quot;Send Money&quot; সিলেক্ট করুন → ৳50 পাঠান
+                      ✅ Nagad অ্যাপে গিয়ে &quot;Send Money&quot; সিলেক্ট করুন → ৳90 পাঠান
                     </p>
                   </div>
                 </div>
@@ -928,7 +928,7 @@ export default function Home() {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span>3000+ Bangla PDF Books</span>
-                      <span>৳50.00</span>
+                      <span>৳90.00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Shipping</span>
@@ -937,7 +937,7 @@ export default function Home() {
                     <hr className="my-2" />
                     <div className="flex justify-between font-bold text-lg">
                       <span>Total</span>
-                      <span>৳50.00</span>
+                      <span>৳90.00</span>
                     </div>
                   </div>
                 </div>
@@ -957,7 +957,7 @@ export default function Home() {
                       <span>অর্ডার প্রসেসিং...</span>
                     </div>
                   ) : (
-                    'অর্ডার করুন ৳50.00'
+                    'অর্ডার করুন ৳90.00'
                   )}
                 </motion.button>
               </form>

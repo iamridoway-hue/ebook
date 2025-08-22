@@ -112,7 +112,7 @@ export default function RootLayout({
               },
               "offers": {
                 "@type": "Offer",
-                "price": "50",
+                "price": "90",
                 "priceCurrency": "BDT",
                 "availability": "https://schema.org/InStock",
                 "seller": {
