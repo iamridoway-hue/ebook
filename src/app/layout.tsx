@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
-
-// Dynamically import analytics components with no SSR
-const Analytics = dynamic(() => import("@/components/Analytics"), { 
-  ssr: false,
-  loading: () => null 
-});
-const MetaPixel = dynamic(() => import("@/components/MetaPixel"), { 
-  ssr: false,
-  loading: () => null 
-});
+import Analytics from "@/components/Analytics";
+import MetaPixel from "@/components/MetaPixel";
 
 const bengali = Hind_Siliguri({
   subsets: ['bengali', 'latin'],
