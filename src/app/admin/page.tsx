@@ -427,7 +427,7 @@ export default function AdminPanel() {
                           </>
                         )}
                         <a
-                          href={`https://wa.me/${order.whatsapp}?text=আপনার অর্ডার সম্পর্কে জানাতে চাই...`}
+                          href="https://wa.link/xqfy3o"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-900 transition-colors"
